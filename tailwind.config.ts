@@ -11,7 +11,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        custLightPink: "#f9f0ff",
+        custGrayishPurple: "#8c6991",
+        custBrightPurple: "#ad28eb",
+        custDarkPurple: "#2f1533",
       },
+      fontFamily: {
+        custom: ["workSans"],
+      }
     },
   },
   plugins: [],
