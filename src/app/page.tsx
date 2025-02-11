@@ -1,4 +1,7 @@
+'use client'
+
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
   const faqList = [
@@ -20,10 +23,18 @@ export default function Home() {
     },
   ];
 
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  function faqClick(index: number) {
+    setActiveIndex(index === activeIndex ? -1 : index);
+  }
+
+  const iconPlus = "/assets/images/icon-plus.svg";
+  const iconMinus = "/assets/images/icon-minus.svg";
 
   return (
     <main className="absolute h-screen w-screen flex flex-col justify-center items-center">
-      <div className="grid w-max m-5 p-12 space-y-6 rounded-2xl bg-white">
+      <div className="md:w-[600px] m-3 md:m-5 p-8 md:p-12 rounded-2xl grid space-y-2 md:space-y-6 bg-white">
         <div className="flex flex-row space-x-5">
           <Image
             src="/assets/images/icon-star.svg"
@@ -37,23 +48,27 @@ export default function Home() {
         <ul className="flex flex-col">
           {
             faqList.map((faq, index) => (
-              <li key={index} className="py-6 border-t first:border-t-0 border-custLightPink">
+              <li key={index} className="py-6 border-t first:border-t-0 border-custLightPink" onClick={() => faqClick(index)}>
                 <button className="w-full flex justify-between items-center text-left">
-                  <a className="font-bold text-custDarkPurple hover:text-custBrightPurple">
+                  <p className="font-bold text-custDarkPurple hover:text-custBrightPurple">
                     {faq.question}
-                  </a>
+                  </p>
                   <Image
-                    src="/assets/images/icon-plus.svg"
+                    src={index === activeIndex ? iconMinus : iconPlus}
                     alt=""
                     height={30}
                     width={30}
                     className="ml-10"
                   ></Image>
                 </button>
-
+                <p className={` text-custGrayishPurple overflow-hidden transition-[max-height] duration-50 
+                  ${index === activeIndex
+                    ? 'mt-3 max-h-72'
+                    : 'mt-0 max-h-0'}`}>
+                  {faq.answer}
+                </p>
               </li>
-            )
-            )
+            ))
           }
         </ul>
       </div>

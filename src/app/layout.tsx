@@ -21,7 +21,7 @@ export default function RootLayout({
         bg-[url(/assets/images/background-pattern-mobile.svg)] 
         sm:bg-[url(/assets/images/background-pattern-desktop.svg)] 
         bg-no-repeat bg-cover
-         bg-custLightPink"
+        bg-custLightPink"
       >
         {children}
       </body>
