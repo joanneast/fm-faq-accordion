@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github](https://github.com/joanneast/fm-faq-accordion.git)
-- Live Site URL: [vercel](-)
+- Live Site URL: [vercel](https://fm-faq-accordion-mocha.vercel.app/)
 
 ## My process
 
