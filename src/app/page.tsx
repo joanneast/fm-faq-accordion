@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <main className="absolute h-screen w-screen flex flex-col justify-center items-center">
-      <div className="md:w-[600px] m-3 md:m-5 p-8 md:p-12 rounded-2xl grid space-y-2 md:space-y-6 bg-white">
+      <div className="md:w-[600px] m-3 md:m-5 p-8 md:p-12 rounded-2xl shadow-2xl grid space-y-2 md:space-y-6 bg-white">
         <div className="flex flex-row space-x-5">
           <Image
             src="/assets/images/icon-star.svg"
